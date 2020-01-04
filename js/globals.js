@@ -50,10 +50,10 @@ $(function () {
   addSwiper(".art-slider", {
     navigation: true,
     loop: true,
+    speed: 600,
     autoHeight: true,
     autoplay: {
-      delay: 4000,
-      disableOnInteraction: false
+      delay: 4000
     }
   });
 });
@@ -108,3 +108,12 @@ function addSwiper(selector, options = {}) {
 }
 
 // common.js
+$(function () {
+  $(window).on("scroll", function () {
+    if ($(window).scrollTop() > 0) {
+      $(".header").addClass("active");
+    } else {
+      $(".header").removeClass("active");
+    }
+  });
+});
