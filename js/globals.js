@@ -33,6 +33,24 @@ $(function () {
   });
 });
 
+// survey-slider
+$(function () {
+  const slider = addSwiper(".survey-slider", {
+    effect: "fade",
+    allowTouchMove: false,
+    autoHeight: true
+  })[0];
+
+  if (!slider) {
+    return;
+  }
+
+  $(".js-survey-next").on("click", function (e) {
+    e.preventDefault();
+    slider.slideNext();
+  });
+});
+
 // main slider
 $(function () {
   addSwiper(".main-slider", {
