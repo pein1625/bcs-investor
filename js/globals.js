@@ -135,3 +135,21 @@ $(function () {
     }
   });
 });
+
+$(function () {
+  $(".faq__tabs .nav-link").on("shown.bs.tab", function () {
+    if ($(window).width() > 767) {
+      return;
+    }
+
+    const $content = $("#faq-content");
+
+    if (!$content.length) {
+      return;
+    }
+
+    $("html, body").animate({
+      scrollTop: $content.offset().top - 60
+    }, 800);
+  });
+});
