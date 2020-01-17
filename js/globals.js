@@ -153,3 +153,22 @@ $(function () {
     }, 800);
   });
 });
+
+$(function () {
+  const $popup = $(".popup");
+
+  if (!$popup.length) {
+    return;
+  }
+
+  if (window.sessionStorage.firstVisit) {
+    return;
+  }
+
+  window.sessionStorage.firstVisit = true;
+  const delay = parseInt($popup.data("delay"));
+
+  setTimeout(function () {
+    $popup.modal("show");
+  }, delay ? delay * 1000 : 10000);
+});
